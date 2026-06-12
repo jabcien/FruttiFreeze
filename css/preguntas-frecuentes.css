@@ -1,0 +1,224 @@
+/* ==================================================
+   PREGUNTAS FRECUENTES - FRUTTIFREZZE
+   ================================================== */
+
+/* ===== VARIABLES ===== */
+:root {
+    --color-principal: #fda219;
+    --color-secundario: #00e4d1;
+    --color-verde: #4caf50;
+    --color-blanco: #ffffff;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
+    --color-borde: #e0e0e0;
+
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --radio: 12px;
+    --primary:#2563eb;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8)
+        ),
+        url("../img/logo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.hero .overlay {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ===== CONTENEDOR ===== */
+.contenedor {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* ===== FAQ ===== */
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== TARJETAS ===== */
+details {
+    background: var(--color-blanco);
+    border-radius: var(--radio);
+    border-left: 6px solid var(--color-principal);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+details:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== PREGUNTA ===== */
+summary {
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+summary:hover {
+    background: rgba(255, 107, 53, 0.08);
+}
+
+/* Ocultar flecha predeterminada */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Icono + */
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 1.5rem;
+    color: var(--color-principal);
+    transition: 0.3s;
+}
+
+/* Icono - */
+details[open] summary::after {
+    content: "−";
+}
+
+/* ===== RESPUESTA ===== */
+details p {
+    padding: 0 20px 20px;
+    color: #555;
+    border-top: 1px solid var(--color-borde);
+    animation: aparecer 0.3s ease-in-out;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    summary {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .contenedor {
+        padding: 0 15px;
+    }
+
+    summary {
+        padding-right: 45px;
+    }
+}
+.home-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+
+    width:60px;
+    height:60px;
+
+    background:var(--primary);
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    font-size:1.5rem;
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,.4);
+
+    transition:.3s;
+}
+
+.home-float:hover{
+    transform:scale(1.1);
+}
